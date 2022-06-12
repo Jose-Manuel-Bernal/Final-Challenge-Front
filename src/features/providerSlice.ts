@@ -1,7 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 interface ProviderState {
-    value: Provider[]
+    providerList: Provider[]
 }
 
 interface Provider {
@@ -11,13 +12,14 @@ interface Provider {
 }
 
 const initialState: ProviderState = {
-    value: []
+    providerList: []
 }
 
 export const providersSlice = createSlice({
     name: "providers",
     initialState,
-    reducers: {
-        
+    reducers: {},
+    extraReducers(builder){
+         
     }
 })
