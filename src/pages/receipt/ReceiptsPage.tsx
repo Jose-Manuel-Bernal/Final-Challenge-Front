@@ -1,5 +1,7 @@
 import React from "react";
 
-const ReceiptsPage = () => {};
+const ReceiptsPage = () => {
+  return <div></div>;
+};
 
 export default ReceiptsPage;

@@ -1,5 +1,7 @@
 import React from "react";
 
-const InventoryPage = () => {};
+const InventoryPage = () => {
+  return <div></div>;
+};
 
 export default InventoryPage;

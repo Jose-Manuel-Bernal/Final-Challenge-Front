@@ -1,7 +1,7 @@
 import React from "react";
 
 const BillsPage = () => {
-  return <div className="BillsPage"></div>;
+  return <div></div>;
 };
 
-export default { BillsPage };
+export default BillsPage;
