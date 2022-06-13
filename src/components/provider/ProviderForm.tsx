@@ -52,6 +52,7 @@ const ProviderForm: React.FC<IProps> = () => {
             placeholder="Enter name"
             onChange={addingName}
             value={providerName}
+            required
           />
           <Form.Text className="text-muted">
             Write the name of the provider
@@ -64,6 +65,7 @@ const ProviderForm: React.FC<IProps> = () => {
             placeholder="Enter the phone number"
             onChange={addingNumber}
             value={phoneNumber}
+            required
           />
           <Form.Text className="text-muted">
             Write the phone number of the provider

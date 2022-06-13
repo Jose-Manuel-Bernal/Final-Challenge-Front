@@ -11,6 +11,8 @@ import NavigationBar from "./components/visualComponents/NavigationBar";
 import { useDispatch } from "react-redux";
 import { getProviders } from "./state/controllers/providerController";
 import { getAllProviders } from "./state/slices/providerSlice";
+import { getProducts } from "./state/controllers/productController";
+import { getAllProducts } from "./state/slices/productSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +20,9 @@ function App() {
   useEffect(() => {
     getProviders().then((providers) => {
       dispatch(getAllProviders(providers));
+    });
+    getProducts().then((products) => {
+      dispatch(getAllProducts(products));
     });
   }, []);
 

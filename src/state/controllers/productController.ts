@@ -20,8 +20,8 @@ export const saveProduct =async (product:Product): Promise<Product> => {
     return productSavedPromise
 }
 
-export const updateProvider = async (product:Product, provider:Provider): Promise<Product> => {
-    let newProductUpdated = { ...product, provider: provider}
+export const updateProvider = async (product:Product): Promise<Product> => {
+    let newProductUpdated = product
 
     let productUpdatePromise = await fetch("http://localhost:8080/put/product",
     {
