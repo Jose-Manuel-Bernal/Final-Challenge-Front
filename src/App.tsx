@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginPage from "./pages/login/LoginPage";
-import BillsPage from "./pages/bill/BillsPage";
-import InventoryPage from "./pages/inventory/InventoryPage";
-import ProductsPage from "./pages/product/ProductsPage";
-import ReceiptsPage from "./pages/receipt/ReceiptsPage";
-import ProvidersPage from "./pages/provider/ProvidersPage";
+import LoginPage from "./pages/LoginPage";
+import BillsPage from "./pages/BillsPage";
+import InventoryPage from "./pages/InventoryPage";
+import ProductsPage from "./pages/ProductsPage";
+import ReceiptsPage from "./pages/ReceiptsPage";
+import ProvidersPage from "./pages/ProvidersPage";
 import NavigationBar from "./components/visualComponents/NavigationBar";
 
 function App() {

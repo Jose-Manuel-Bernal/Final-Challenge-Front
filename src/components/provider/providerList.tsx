@@ -1,22 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { providersSlice } from "../../features/providerSlice";
+import { useSelector } from "react-redux";
+import { Provider } from "../../state/entitiesInterfaces/interface";
+import { storeType } from "../../state/store";
 import ProviderComponent from "./ProviderComponent";
 
-function providerList() {
-  const [provider, setProvider] = useState([]);
-  const providers = () => {};
+function ProviderList() {
+  const providers = useSelector((state: storeType) => state.providers);
 
-  providers();
-
-  // const providerView = provider.map((prov) => {
-  //   return <ProviderComponent />;
-  // });
   return (
     <div>
-      <h1>Providers</h1>
+      <h2>Providers list</h2>
+      {providers.map((provider: Provider) => (
+        <ProviderComponent provider={provider} />
+      ))}
     </div>
   );
 }
 
-export default providerList;
+export default ProviderList;
