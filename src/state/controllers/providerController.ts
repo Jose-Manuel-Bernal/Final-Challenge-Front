@@ -1,6 +1,6 @@
 import {Provider} from '../entitiesInterfaces/interface'
 
-export const getProviders = async () => {
+export const getProviders = async (): Promise<Provider[]> => {
     let response = await fetch("http://localhost:8080/get/providers")
     let data = await response.json()
     return data

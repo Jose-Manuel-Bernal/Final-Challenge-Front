@@ -1,4 +1,5 @@
 import React from "react";
+import ProviderForm from "../components/provider/ProviderForm";
 import ProviderList from "../components/provider/ProviderList";
 
 const ProvidersPage = () => {
@@ -6,8 +7,14 @@ const ProvidersPage = () => {
     <div>
       <div>
         <h1>Providers</h1>
+        <br />
+        <br />
+        <br />
       </div>
       <div>
+        <ProviderForm />
+        <br />
+        <br />
         <ProviderList />
       </div>
     </div>
