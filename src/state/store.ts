@@ -1,17 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit";
 import providerReducer from "./slices/providerSlice";
 import productReducer from './slices/productSlice'
-import {Provider, Product} from './entitiesInterfaces/interface'
+import inventoryReducer from './slices/inventorySlice'
+import {Provider, Product, Inventory} from './entitiesInterfaces/interface'
 
 type storeType = {
     providers: Provider[]
     products: Product[]
+    inventories: Inventory[]
 }
 
 const store = configureStore({
     reducer: {
         providers: providerReducer,
-        products: productReducer
+        products: productReducer,
+        inventories: inventoryReducer
     }
 })
 

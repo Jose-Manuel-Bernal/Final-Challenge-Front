@@ -2,22 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 import {Product} from "../entitiesInterfaces/interface";
 
 
-const initialState: Product[] = []
+const initialState: {productList: Product[]} = {productList: []}
 
 export const productSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
         getAllProducts (state, action) {
-            return action.payload
+            state.productList = action.payload
         },
         addNewProduct (state, action) {
-            state.push(action.payload)
+            state.productList.push(action.payload)
         },
         updateProduct (state, action){
             const productToUpdate = action.payload
-
-            const newListOfProductsForUpdate:Product[] = state.map(
+            const newListOfProductsForUpdate:Product[] = state.productList.map(
                 product => {
                     if (product.id === productToUpdate.id) {
                         return productToUpdate
@@ -27,16 +26,14 @@ export const productSlice = createSlice({
             )
             const newStateWithUpdatedProduct = {
                 ...state,
-                newListOfProductsForUpdate
+                productList: newListOfProductsForUpdate
             }
             return newStateWithUpdatedProduct
         },
         deleteProduct (state, action) {
             const productDelete = action.payload
 
-            const newListOfProducts = state.filter(product => product.id !== productDelete.id)
-
-            return newListOfProducts
+            const newListOfProducts = state.productList.filter(product => product.id !== productDelete.id)
         }
     }
 })

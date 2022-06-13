@@ -6,21 +6,13 @@ import ProductCard from "./ProductCard";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function ProductList() {
-  const products = useSelector((state: storeType) => state.products);
-
-  // const [productsHook, setProductsHook] = useState<Product[]>([]);
-
-  // setProductsHook(useSelector((state: storeType) => state.products));
-
-  type productProps = {
-    product: Product;
-  };
+  const { productList } = useSelector((state: storeType) => state.products);
 
   return (
     <div className="container pt-4 pb-2">
       <h3>Products List</h3>
       <CardGroup>
-        {products.map((product: Product) => (
+        {productList.map((product: Product) => (
           <ProductCard product={product} />
         ))}
       </CardGroup>

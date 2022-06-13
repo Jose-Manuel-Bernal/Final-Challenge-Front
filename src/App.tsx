@@ -13,6 +13,8 @@ import { getProviders } from "./state/controllers/providerController";
 import { getAllProviders } from "./state/slices/providerSlice";
 import { getProducts } from "./state/controllers/productController";
 import { getAllProducts } from "./state/slices/productSlice";
+import { getAllInventories } from "./state/slices/inventorySlice";
+import { getInventories } from "./state/controllers/inventoryController";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +25,9 @@ function App() {
     });
     getProducts().then((products) => {
       dispatch(getAllProducts(products));
+    });
+    getInventories().then((inventories) => {
+      dispatch(getAllInventories(inventories));
     });
   }, []);
 
