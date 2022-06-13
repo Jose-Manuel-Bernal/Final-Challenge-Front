@@ -4,3 +4,10 @@ export interface Provider {
   phoneNumber: string;
 }
 
+export interface Product {
+  id?: string;
+  name: string;
+  price: number;
+  provider: Provider
+}
+
