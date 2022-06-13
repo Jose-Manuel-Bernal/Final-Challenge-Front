@@ -1,4 +1,5 @@
 import React from "react";
+import InventoryForm from "../components/inventory/InventoryForm";
 import InventoryList from "../components/inventory/InventoryList";
 
 const InventoryPage = () => {
@@ -11,7 +12,7 @@ const InventoryPage = () => {
         <br />
       </div>
       <div>
-        {/* <InventoryForm /> */}
+        <InventoryForm />
         <br />
         <br />
         <InventoryList />

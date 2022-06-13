@@ -33,7 +33,7 @@ const ProductForm: React.FC<IProps> = () => {
   const addProduct = async (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    e.preventDefault;
+    e.preventDefault();
     let providerForProduct = providers.find(
       (provider) => provider.id === idProviderForProduct
     );
@@ -85,7 +85,7 @@ const ProductForm: React.FC<IProps> = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group>
-          <Form.Label>Provicer:</Form.Label>
+          <Form.Label>Provider:</Form.Label>
           <Form.Select
             aria-label="Example text with button addon"
             aria-describedby="basic-addon1"

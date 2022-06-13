@@ -12,15 +12,11 @@ type inventoryProps = {
 const InventoryCard: React.FC<inventoryProps> = ({ inventory }) => {
   const dispatch = useDispatch();
 
-  const [minAlert, setMinAlert] = useState(inventory.stock <= inventory.min);
-  const [emptyAlert, setEmptyAlert] = useState(false);
-  const [fullAlert, setFullAlert] = useState(false);
-
-  const validateMin = () => {
-    if (inventory.stock <= inventory.min) {
-      setMinAlert(true);
-    }
-  };
+  const [minAlert, setMinAlert] = useState(
+    inventory.stock <= inventory.min && inventory.stock != 0
+  );
+  const [emptyAlert, setEmptyAlert] = useState(inventory.stock === 0);
+  const [fullAlert, setFullAlert] = useState(inventory.stock === inventory.max);
 
   const deleteBtn = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
