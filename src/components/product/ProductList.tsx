@@ -6,7 +6,7 @@ import ProductCard from "./ProductCard";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function ProductList() {
-  const { productList } = useSelector((state: storeType) => state.products);
+  const productList = ({} = useSelector((state: storeType) => state.products));
 
   return (
     <div className="container pt-4 pb-2">

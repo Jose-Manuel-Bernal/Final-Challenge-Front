@@ -12,7 +12,7 @@ interface IProps {}
 const InventoryForm: React.FC<IProps> = () => {
   const dispatch = useDispatch();
 
-  const { productList } = useSelector((state: storeType) => state.products);
+  const productList = ({} = useSelector((state: storeType) => state.products));
 
   const [minInventory, setMin] = useState("");
   const [maxInventory, setMax] = useState("");
