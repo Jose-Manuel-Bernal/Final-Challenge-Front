@@ -1,15 +1,16 @@
 import {Product} from "../entitiesInterfaces/interface";
 import {Provider} from '../entitiesInterfaces/interface'
+import {URL} from './url'
 
 
 export const getProducts = async (): Promise<Product[]> => {
-    let response = await fetch("http://localhost:8080/get/products")
+    let response = await fetch(`${URL}get/products`)
     let data = await response.json()
     return data
 }
 
 export const saveProduct =async (product:Product): Promise<Product> => {
-    let productSavedPromise = await fetch ("http://localhost:8080/post/product",
+    let productSavedPromise = await fetch (`${URL}post/product`,
     {method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -23,7 +24,7 @@ export const saveProduct =async (product:Product): Promise<Product> => {
 export const updateProvider = async (product:Product): Promise<Product> => {
     let newProductUpdated = product
 
-    let productUpdatePromise = await fetch("http://localhost:8080/put/product",
+    let productUpdatePromise = await fetch(`${URL}put/product`,
     {
         method: "PUT",
         headers: {
@@ -38,7 +39,7 @@ export const updateProvider = async (product:Product): Promise<Product> => {
 }
 
 export const removeProduct = async (product:Product): Promise<number> => {
-    let response = await fetch(`http://localhost:8080/delete/product/${product.id}`,
+    let response = await fetch(`${URL}delete/product/${product.id}`,
     {method: "DELETE"})
     return response.status
 }

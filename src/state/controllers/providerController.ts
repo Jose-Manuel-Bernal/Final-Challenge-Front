@@ -1,13 +1,14 @@
 import {Provider} from '../entitiesInterfaces/interface'
+import {URL} from './url'
 
 export const getProviders = async (): Promise<Provider[]> => {
-    let response = await fetch("http://localhost:8080/get/providers")
+    let response = await fetch(`${URL}get/providers`)
     let data = await response.json()
     return data
 }
 
 export const saveProvider = async (provider:Provider): Promise<Provider> => {
-    let providerSavedPromise = await fetch("http://localhost:8080/post/provider",
+    let providerSavedPromise = await fetch(`${URL}post/provider`,
     {method: "POST",
          headers: {
             "Content-type": "application/json"
@@ -19,7 +20,7 @@ export const saveProvider = async (provider:Provider): Promise<Provider> => {
 }
 
 export const removeProvider = async (provider:Provider): Promise<number> => {
-    let response = await fetch(`http://localhost:8080/delete/provider/${provider.id}`,
+    let response = await fetch(`${URL}delete/provider/${provider.id}`,
     {method: "DELETE"})
     return response.status    
 }

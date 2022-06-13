@@ -1,13 +1,14 @@
 import {Product, Inventory} from "../entitiesInterfaces/interface";
+import {URL} from './url'
 
 export const getInventories = async (): Promise<Inventory[]> => {
-    let response = await fetch("http://localhost:8080/get/inventories")
+    let response = await fetch(`${URL}get/inventories`)
     let data = await response.json()
     return data
 }
 
 export const SaveInventory =async (inventory:Inventory): Promise<Inventory>  => {
-    let inventorySavedPromise = await fetch ("http://localhost:8080/post/inventory",
+    let inventorySavedPromise = await fetch (`${URL}post/inventory`,
     {method: "POST",
         headers: {
             "Content-type": "application/json"
@@ -21,7 +22,7 @@ export const SaveInventory =async (inventory:Inventory): Promise<Inventory>  => 
 export const updateInventory =async (inventory:Inventory): Promise<Inventory>  => {
     let newInventoryUpdated = inventory
 
-    let inventoryUpdatePromise = await fetch("http://localhost:8080/put/inventory",
+    let inventoryUpdatePromise = await fetch(`${URL}put/inventory`,
     {
         method: "PUT",
         headers: {
@@ -36,7 +37,7 @@ export const updateInventory =async (inventory:Inventory): Promise<Inventory>  =
 }
 
 export const removeInventory =async (inventory:Inventory): Promise<number> => {
-    let response = await fetch(`http://localhost:8080/delete/inventory/${inventory.id}`,
+    let response = await fetch(`${URL}delete/inventory/${inventory.id}`,
     {method: "DELETE"})
     return response.status
 }
