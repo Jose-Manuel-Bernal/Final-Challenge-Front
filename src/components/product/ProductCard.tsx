@@ -8,7 +8,7 @@ import {
 import { Product, Provider } from "../../state/entitiesInterfaces/interface";
 import { deleteProduct, updateProduct } from "../../state/slices/productSlice";
 import InputGroup from "react-bootstrap/InputGroup";
-import { storeType } from "../../state/store";
+import { RootState } from "../../state/store";
 
 type productProps = {
   product: Product;
@@ -17,7 +17,7 @@ type productProps = {
 const ProductCard: React.FC<productProps> = ({ product }) => {
   const dispatch = useDispatch();
 
-  const providers = useSelector((state: storeType) => state.providers);
+  const providers = useSelector((state: RootState) => state.providers);
 
   const [providerIdToChange, setProviderIdToChange] = useState("");
 

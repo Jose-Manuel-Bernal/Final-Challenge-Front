@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {Product} from "../entitiesInterfaces/interface";
 
+interface productState {
+    productList: Product[]
+}
 
-const initialState: {productList: Product[]} = {productList: []}
+const initialState: productState = {productList: []}
 
 export const productSlice = createSlice({
     name: "products",

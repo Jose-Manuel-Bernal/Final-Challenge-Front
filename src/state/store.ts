@@ -19,7 +19,4 @@ const store = configureStore({
 })
 
 export default store
-
-export type {storeType}
-
-
+export type RootState = ReturnType<typeof store.getState>
