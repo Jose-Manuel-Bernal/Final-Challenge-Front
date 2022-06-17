@@ -13,7 +13,6 @@ export const productSlice = createSlice({
     reducers: {
         getAllProducts (state, action) {
             state.productList = action.payload
-            const getState:Product[] = state.productList
         },
         addNewProduct (state, action) {
             state.productList.push(action.payload)

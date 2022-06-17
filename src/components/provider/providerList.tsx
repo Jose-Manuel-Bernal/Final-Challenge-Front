@@ -6,7 +6,9 @@ import ProviderComponent from "./ProviderComponent";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function ProviderList() {
-  const providers = useSelector((state: RootState) => state.providers);
+  const providers = useSelector(
+    (state: RootState) => state.providers.providerList
+  );
 
   return (
     <div className="container pt-4 pb-2">
