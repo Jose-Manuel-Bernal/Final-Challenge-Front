@@ -15,6 +15,8 @@ import { getProducts } from "./state/controllers/productController";
 import { getAllProducts } from "./state/slices/productSlice";
 import { getAllInventories } from "./state/slices/inventorySlice";
 import { getInventories } from "./state/controllers/inventoryController";
+import { getAllReceipts } from "./state/slices/receiptSlice";
+import { getReceipts } from "./state/controllers/receiptController";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +30,9 @@ function App() {
     });
     getInventories().then((inventories) => {
       dispatch(getAllInventories(inventories));
+    });
+    getReceipts().then((receipts) => {
+      dispatch(getAllReceipts(receipts));
     });
   }, []);
 

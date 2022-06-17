@@ -18,3 +18,10 @@ export interface Inventory {
   stock: number
   product: Product
 }
+
+export interface Receipt {
+  id?: string
+  date?: string
+  product: Product
+  amount: number
+}

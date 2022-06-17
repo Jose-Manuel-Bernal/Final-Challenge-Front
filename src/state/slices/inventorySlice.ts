@@ -17,7 +17,7 @@ export const inventorySlice = createSlice({
         addNewInventory (state, action) {
             state.inventoryList.push(action.payload)
         },
-        updateInventory (state, action) {
+        updateInventoryState (state, action) {
             const inventoryToUpdate = action.payload
 
             const newListOfInventoriesForUpdate:Inventory[] = state.inventoryList.map(
@@ -46,6 +46,6 @@ export const inventorySlice = createSlice({
     }
 })
 
-export const { getAllInventories, addNewInventory, deleteInventory, updateInventory} = inventorySlice.actions
+export const { getAllInventories, addNewInventory, deleteInventory, updateInventoryState} = inventorySlice.actions
 
 export default inventorySlice.reducer
