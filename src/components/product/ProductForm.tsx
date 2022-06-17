@@ -12,7 +12,9 @@ interface IProps {}
 const ProductForm: React.FC<IProps> = () => {
   const dispatch = useDispatch();
 
-  const providers = useSelector((state: RootState) => state.providers);
+  const providers = useSelector(
+    (state: RootState) => state.providers.providerList
+  );
 
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");

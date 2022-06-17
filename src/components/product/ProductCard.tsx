@@ -17,7 +17,9 @@ type productProps = {
 const ProductCard: React.FC<productProps> = ({ product }) => {
   const dispatch = useDispatch();
 
-  const providers = useSelector((state: RootState) => state.providers);
+  const providers = useSelector(
+    (state: RootState) => state.providers.providerList
+  );
 
   const [providerIdToChange, setProviderIdToChange] = useState("");
 
