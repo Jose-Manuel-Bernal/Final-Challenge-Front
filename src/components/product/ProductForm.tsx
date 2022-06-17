@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Provider, Product } from "../../state/entitiesInterfaces/interface";
 import Button from "react-bootstrap/Button";
-import { storeType } from "../../state/store";
+import { RootState } from "../../state/store";
 import { saveProduct } from "../../state/controllers/productController";
 import { addNewProduct } from "../../state/slices/productSlice";
 
@@ -12,7 +12,7 @@ interface IProps {}
 const ProductForm: React.FC<IProps> = () => {
   const dispatch = useDispatch();
 
-  const providers = useSelector((state: storeType) => state.providers);
+  const providers = useSelector((state: RootState) => state.providers);
 
   const [productName, setProductName] = useState("");
   const [price, setPrice] = useState("");
