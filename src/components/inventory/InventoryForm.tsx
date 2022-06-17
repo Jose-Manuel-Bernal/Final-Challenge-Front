@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { storeType } from "../../state/store";
+import { RootState } from "../../state/store";
 import Button from "react-bootstrap/Button";
 import { Inventory, Product } from "../../state/entitiesInterfaces/interface";
 import { SaveInventory } from "../../state/controllers/inventoryController";
@@ -12,7 +12,9 @@ interface IProps {}
 const InventoryForm: React.FC<IProps> = () => {
   const dispatch = useDispatch();
 
-  const productList = ({} = useSelector((state: storeType) => state.products));
+  const productList = ({} = useSelector(
+    (state: RootState) => state.products.productList
+  ));
 
   const [minInventory, setMin] = useState("");
   const [maxInventory, setMax] = useState("");

@@ -1,22 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {Inventory} from "../entitiesInterfaces/interface";
 
-const initialState: Inventory[] = []
+interface inventoryState {
+    inventoryList: Inventory[]
+}
+
+const initialState: inventoryState = {inventoryList: []}
 
 export const inventorySlice = createSlice({
     name: "inventories",
     initialState,
     reducers: {
         getAllInventories (state, action) {
-            return action.payload
+            state.inventoryList = action.payload
         },
         addNewInventory (state, action) {
-            state.push(action.payload)
+            state.inventoryList.push(action.payload)
         },
         updateInventory (state, action) {
             const inventoryToUpdate = action.payload
 
-            const newListOfInventoriesForUpdate:Inventory[] = state.map(
+            const newListOfInventoriesForUpdate:Inventory[] = state.inventoryList.map(
                 inventory => {
                     if (inventory.id === inventoryToUpdate.id) {
                         return inventoryToUpdate
@@ -33,9 +37,11 @@ export const inventorySlice = createSlice({
         deleteInventory (state, action) {
             const inventoryDelete = action.payload
 
-            const newListOfInventories = state.filter(inventory => inventory.id !== inventoryDelete.id)
+            const newListOfInventories = state.inventoryList.filter(inventory => inventory.id !== inventoryDelete.id)
 
-            return newListOfInventories
+            const newState = {...state, inventoryList:newListOfInventories }
+
+            return newState
         }
     }
 })

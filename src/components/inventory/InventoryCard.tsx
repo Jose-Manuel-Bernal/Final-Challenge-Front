@@ -29,8 +29,6 @@ const InventoryCard: React.FC<inventoryProps> = ({ inventory }) => {
     }
   };
 
-  //   validateMin();
-
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Body>
